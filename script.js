@@ -1,0 +1,5 @@
+const phone='94788754472';
+const date=document.getElementById('date');
+if(date){date.min=new Date().toISOString().split('T')[0];}
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('bookingForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim();const mobile=document.getElementById('phone').value.trim();const service=document.getElementById('service').value;const d=document.getElementById('date').value;const t=document.getElementById('time').value;const msg=document.getElementById('message').value.trim();const text=`Hello Saloon Be Beauty by Samadhi!%0A%0AI would like to request an appointment.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(mobile)}%0AService: ${encodeURIComponent(service)}%0ADate: ${encodeURIComponent(d)}%0APreferred time: ${encodeURIComponent(t)}%0A${msg?`Message: ${encodeURIComponent(msg)}%0A`:''}%0APlease confirm availability and price. Thank you!`;window.open(`https://wa.me/${phone}?text=${text}`,'_blank')});
